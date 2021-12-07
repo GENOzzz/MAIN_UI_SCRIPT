@@ -1,0 +1,51 @@
+body{
+    margin:0;
+    padding: 0;;
+}
+#photo-container{
+    width: 500px;
+    height:250px;
+    margin:auto;
+    border: 1px solid red;
+    overflow: hidden;  /*부모 태그를 넘어가면 hidden>>사진을 하나만 보이게함 */
+}
+#photos{
+    width: 2500px;
+    height: 100%;
+    border: 1px solid blue;
+    display: flex;
+    /* margin-left: -500px; */
+    transition: all 0.5s;
+}
+.photo{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+}
+/* 캐러셀 셀렉터 */
+#selection{
+    width: 300px;
+    height: 50px;
+    margin:0 auto;
+    border : 1px solid red;
+    /* 가로세로 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.options{
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    border-radius: 50%;
+    background: darkcyan;
+    transition: all 0.8s;
+}
+.options:hover{
+    background: lightgreen;
+    cursor: pointer;
+}

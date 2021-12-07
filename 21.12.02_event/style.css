@@ -1,0 +1,63 @@
+.circle{
+    all: unset;
+    position: absolute;
+    left: 250px;
+    width: 200px;
+    height: 70px;
+    text-align: center;
+    background: skyblue;
+    border-radius: 50%;
+    transition: all ease 2.5s;
+}
+/* id랑 클래스가 같이 있으면 id가 우선순위 */
+#circle{
+    display:inline-block;
+    text-align: center;
+    /* 글 세로정렬 */
+    line-height: 100px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: snow;
+    background-color: peru;
+    /* 배경이미지설정. */
+    background-image: url('clock_bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#led-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 500px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+}
+.led{
+    width: 30px;
+    height: 30px;
+    background: orange;
+    border-radius: 50%;
+    margin-right: 50px;
+    transition: all 0.5s ease-in-out;
+}
+/* led처럼 보이게 */
+.on{
+    box-shadow: 1px 1px 10px 10px orange;
+}
+.con{
+    box-shadow: 1px 1px 10px 10px rgb(95, 9, 231);
+}
+.eon{
+    box-shadow: 1px 1px 10px 10px rgb(2, 193, 252);
+}
