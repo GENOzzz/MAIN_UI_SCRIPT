@@ -1,11 +1,19 @@
 const menuContainer = document.getElementById('menu-container')
+let prevTarget=null;
+
 
 function openMenu(e){
+    if(prevTarget!=null){
+        prevTarget.nextElementSibling.classList.remove('open')
+    }
+
     const target = e.target
     if(target.className === 'title'){
         console.dir(target)
-        target.nextElementSibling.classList.toggle('open')
+        target.nextElementSibling.classList.add('open')
     }
+
+    prevTarget=target;
 }
 
 function closeMenu(e){
