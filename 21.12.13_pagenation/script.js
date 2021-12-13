@@ -7,6 +7,8 @@ const pageContents = [
 const contents = document.getElementById('contents')
 const pageBtns = document.getElementById('page-btns')
 
+
+
 for(let i=0;i<pageContents.length;i++){
     const btn = document.createElement('button')
     btn.className = 'page-btn'
@@ -14,7 +16,7 @@ for(let i=0;i<pageContents.length;i++){
 
     pageBtns.appendChild(btn)
 }
-contents.innerHTML = pageContents[5]
+contents.innerHTML = pageContents[0]
 
 function changePage(e){
     const target = e.target

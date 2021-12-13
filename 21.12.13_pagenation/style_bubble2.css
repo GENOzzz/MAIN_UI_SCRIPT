@@ -19,3 +19,8 @@ body{
     cursor: pointer;
     transition: all 0.7s;
 }
+#text{
+    text-align: center;
+    color: blueviolet;
+    font-size: 10rem;
+}
