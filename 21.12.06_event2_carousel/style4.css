@@ -13,6 +13,7 @@
     animation-iteration-count: infinite;
     animation-timing-function:linear;
 }
+/* 시간대별로 원을 돌리는 css */
 @keyframes spinCircle {
     from {
         transform:translate(-50%, -50%) rotate(0);

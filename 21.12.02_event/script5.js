@@ -1,8 +1,8 @@
 //클릭할때마다 색상변경
 function changeColor(e){
-    var r = (Math.random()*256);
-    var g = (Math.random()*256);
-    var b = (Math.random()*256);
+    var r = (Math.random()*255);
+    var g = (Math.random()*255);
+    var b = (Math.random()*255);
     console.log(e)
     console.log(e.target)
     console.log(e.target.style.width)

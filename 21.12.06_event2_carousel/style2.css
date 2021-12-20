@@ -32,6 +32,9 @@ body{
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     background-color: lightpink;
     transition: all 0.5s;
     margin-left: 20px;

@@ -43,7 +43,7 @@ function movebox2(){//디브를 올리고 내리는 함수
     //box2[prevcnt].style[pos2]=length2+'px'//제자리
     box2[cnt].style[pos]=length+'px'//올리고
     prevcnt=cnt
-    cnt = cnt === box2.length-1? 0:cnt+1; 
+    cnt = cnt === box2.length-1? 0:cnt+1;
 }
 function movedown2(){//div를 내리는 함수
     //console.log("down")

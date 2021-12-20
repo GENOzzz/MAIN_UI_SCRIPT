@@ -24,21 +24,22 @@ function moveToRight(e){
 fruitContainer.addEventListener('click',moveToRight)
 
 const textbox=document.getElementById('text')
-const text="I LOVE YOU!"
+const text="I LOVE YOU!!!!"
 
 let i = 0;
 let timer = setInterval(function(){
 
   if(i>text.length-1){
-      console.log('clear!')
-    clearInterval(timer)
+    console.log('clear!')
+    //clearTimeout(timer)
+    i=0;
+    if(textbox.hasChildNodes()){
+      while(textbox.hasChildNodes()){
+        textbox.removeChild(textbox.firstChild)
+      }
+    }
   }else{
     textbox.append(text[i]);
-  }
-  if(i==text.length){
-      i=0
-  }
-  else{
     i++;
   }
-}, 1000)
+}, 300)
