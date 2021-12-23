@@ -1,0 +1,30 @@
+/* 캐릭터 스타일 */
+#box{
+    width: 50px;
+    height: 50px;
+    background-color: saddlebrown;
+    position: absolute;
+    left: 0px;
+    top: -100px;
+    transition: all 0.3s ease-out;
+    background-image: url('img/gorani.jfif');
+    background-size: cover;
+    /* 커서 깜빡임 해결 */
+    caret-color: transparent; 
+}
+/* 그라운드 스타일 */
+#bar{
+    width: 700px;
+    height: 50px;
+    background-image: url('img/grass.jfif');
+    position: absolute;
+    left: 0;
+    top: 550px;
+}
+
+#gameOver{
+    color: white;
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+}
