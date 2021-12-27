@@ -6,22 +6,20 @@
     position: absolute;
     left: 0px;
     top: -100px;
-    transition: all 0.3s ease-out;
-    background-image: url('img/gorani.jfif');
+    transition: all 0.1s ease-out;
+    background-image: url('super-mario-right.jpg');
     background-size: cover;
     /* 커서 깜빡임 해결 */
     caret-color: transparent; 
 }
-/* 그라운드 스타일 */
 #bar{
     width: 700px;
     height: 50px;
-    background-image: url('img/grass.jfif');
+    background-color: peru;
     position: absolute;
     left: 0;
     top: 550px;
 }
-
 #gameOver{
     color: white;
     width: 100%;
