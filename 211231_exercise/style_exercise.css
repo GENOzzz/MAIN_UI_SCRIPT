@@ -1,0 +1,11 @@
+.imgDiv{
+    width: 110px;
+    height: 200px;
+    display: flex;
+}
+.imgDiv img{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    object-fit: cover;
+}

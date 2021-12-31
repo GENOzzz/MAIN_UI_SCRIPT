@@ -172,15 +172,21 @@ fetch(API_URL)
 })
 .then(function(products){
     console.log(products)
-    products.forEach(priceMascara)
+    products.forEach(priceMascara=(element)=>{
+        if(parseInt(element.price)<10){
+            if(element.product_type==='mascara')
+            console.log(element)
+        }
+    })
 })
 
-function priceMascara(element){
-    if(element.price<10){
-        if(element.product_type==='mascara')
-        console.log(element)
-    }
-}
+// function priceMascara(element){
+//     if(element.price<10){
+//         if(element.product_type==='mascara')
+//         console.log(element)
+//     }
+// }
+
 //7
 function ratingLipstick(element){
     if(element.product_type==='lipstick'){
@@ -223,6 +229,26 @@ console.log(soeoulFriends)
 //setTimeout(()=>console.log(soeoulFriends),5000)
 
 //9
+const seoulC=[]
+const daeguC=[]
+const busanC=[]
+
+friends.forEach(Citysort=(element)=>{
+    if(element.city==='seoul'){
+        seoulC.push(element)
+    }
+    else if(element.city==='daegu'){
+        daeguC.push(element)
+    }else{
+        busanC.push(element)
+    }
+})
+console.log("===============")
+console.log(seoulC)
+console.log(daeguC)
+console.log(busanC)
+console.log("===============")
+
 function seoulCity(element){
     return element.city==='seoul'
 }
