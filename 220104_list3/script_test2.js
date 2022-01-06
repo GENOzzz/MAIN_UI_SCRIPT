@@ -32,9 +32,35 @@ const newFriends = [
 friends.splice(3,0,...newFriends)
 console.log(friends)
 
-friends.splice(6,2)
+//4
+//friends.splice(6,2)
+function deleteFriend(name){
+   let listCount=0;
+   friends.forEach(friend=>{
+      if(friend.name==name){
+         const index=friends.indexOf(friend)
+         if(index>-1){
+         friends.splice(index,1)
+         return;
+         }
+      }else{
+         listCount++;
+         if(listCount==friends.length){
+            console.log('해당하는 친구 이름이 없습니다.')
+         }
+      }
+   })
+}
+
+console.log("여기서 확인")
+deleteFriend('hannah')
+deleteFriend('shara')
+deleteFriend('철수')
 console.log(friends)
 
+
+
+//5
 const newFriends2=[]
 
 friends.forEach(friend=>{
@@ -45,6 +71,7 @@ friends.forEach(friend=>{
 
 console.log(newFriends2)
 
+//6
 const youngFriends=[]
 friends.sort((friend1,friend2)=>friend1.age-friend2.age)
 console.log(friends)
@@ -55,6 +82,7 @@ friends.forEach(friend=>{
 })
 console.log(youngFriends)
 
+//7
 function sortName(element){
    return element.name
 }

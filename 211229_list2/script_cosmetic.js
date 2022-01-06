@@ -113,9 +113,33 @@ function searchItem(){
 }
 
 searchInput.addEventListener('input',searchItem)
+// =()=>{
+//   while(!searchInput.value){
+//     nowItems.push(...oldProductList)
+//     const productsRefined=oldProductList.map(buildElement)
+//     rootClear()
+//     productList.forEach(displayProduct)
+//     searchItem.push(...oldProductList)
+//     return;
+//   }
+//   rootClear()
+//   let searchName=searchInput.value.toLowerCase()
+//   nowItems.forEach(element=>{
+//     if(element.product_type.includes(searchName)){
+//       displayProduct(buildElement(element))
+//       searchItems.push(element)
+//     }
+//   })
+//   return;
+// })
+
 sortBtn.addEventListener('click',sortCosmetic)
 
-
+function rootClear(){
+  while(rootDiv.hasChildNodes()){
+    rootDiv.removeChild(rootDiv.firstChild)
+  }
+}
 
 const products=[
     {
