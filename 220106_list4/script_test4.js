@@ -90,7 +90,7 @@ function isVaild(str){
 searchEl.addEventListener('input',()=>{
     const words=document.querySelectorAll("#word")
     const highwords=document.querySelectorAll(".highlight")
-    console.log(words)
+    //console.log(words)
     if(!isVaild(searchEl.value)){
         highwords.forEach(a=>a.classList.remove('highlight'))
         return;
@@ -99,7 +99,7 @@ searchEl.addEventListener('input',()=>{
     words.forEach(word=>{
         if(word.innerText.split(/ ,/)[0].toLowerCase().includes(searchEl.value.toLowerCase())){
             word.classList.add('highlight')
-            console.log(word)
+            //console.log(word)
         }
     })
 })
@@ -125,9 +125,7 @@ function buildElement(comment){
         })
         return word;
     })
-    newComments.forEach(word=>{
-        newWords.innerText+=word+' '
-    })
+    newWords.innerHTML+=newComments.join(' ')
     console.log(newWords)
     return newWords;
 }
