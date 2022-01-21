@@ -42,8 +42,6 @@ console.log(fruits2)
 //5
 //setInterval 메서드를 사용하여 포인트를 계속 추가하고, 포인트 갯수가 360개를 넘어가면 360개만 추출하여 화면에 보여준다. 
 //추출시작점(offset)과 추출범위(range)에 대한 변수를 추가하고, 아래와 같이 실시간 사인 그래프를 구현해보자!
-const graph = document.getElementById('graph')
-
 
 // 1. sin값 계산 포인트 값을 추가하기
 // 2. points 배열에 360개가 넘어가는지 안 넘어가는지에 따라서 그려주는걸 다르게 하기
@@ -51,56 +49,54 @@ const graph = document.getElementById('graph')
 // else points배열에서 offset과 range값을 가지고 360개 추출한 다음에 그려주기
 // 3.offset값을 증가 시키기
 // 4.다시 1번으로 돌아가기
-const points1 = []
-const dx = 1 // degree
+const graph = document.getElementById('graph')
+
+let points = [] // 포인트 배열
 let x = 0 // degree
-let y = 0
-let radx = 0 // radian
-let offset=0//추출시작점
-let range=0//추출범위
+let offset = 0 // 추출 시작점
 
-function startGraph(offset,range){
-    for(let i=0;i<range;i++){
-        getNextPoint(offset)
-    }
+function degreeToRad(x){
+    return x * (Math.PI / 180)
+}
+function calSinVal(x){
+    return Math.sin(x)
+}
+function clearWindow(el){
+    el.innerHTML = ''
+}
+function getPoint(x){
+    return [x, calSinVal(degreeToRad(x))]
+}
+function isArrayFull(len){
+    return len > 360
 }
 
-function getNextPoint(offset){
-    x=offset
-    radx=x*(Math.PI/180)
-    y=Math.sin(rads)
-    points1.push(x,y)
-    offset+=dx
-    console.table(points1)
-}
-
-// 다음 (X,Y) 포인트 값 계산
-function getNextPoint(){
-    radx = x * (Math.PI / 180) //degree to radian
-    y = Math.sin(radx)//
-    points1.push([x, y])
-    x += dx
-    // console.log(points)
-}
-
-// (X,Y) 포인트 값으로부터 DOM 객체 생성 및 화면에 표시
 function displayPoint(point){
+    const [x, y] = point
+    const xScale = 2, yScale = 100, yShift = 100
+
     const pointEl = document.createElement('div')
     pointEl.className = 'dot'
-    pointEl.style.left = `${point[0] * 2}px` // x-scale: 2배
-    pointEl.style.top = `${point[1]* 100 * -1 + 100}px` // y-scale : 100배 (반전 + 좌표이동)
+    pointEl.style.left = `${(x - offset) * xScale}px` // x-scale: 2배 (offset 만큼 좌표이동)
+    pointEl.style.top = `${(y* yScale) * -1 + yShift}px` // y-scale : 100배 (반전 + 좌표이동)
     graph.appendChild(pointEl)
 }
 
-for(let i=0; i<720; i++){
-    getNextPoint()
+function redraw(){
+    clearWindow(graph)
+    
+    points.push(getPoint(x)) // 포인트 추가
+    x++ // x 좌표 변경
+
+    if(isArrayFull(points.length)){
+        points.shift() // 첫번째 요소를 제거함으로써 360개 유지
+        offset++ //  offset 증가
+    }
+    points.forEach(displayPoint) // 화면에 그래프 그리기
+  
 }
 
-//(X,Y) 포인트 값을 요소로 가지는 2차원 배열 생성c
-
-
-//console.table(points1)
-points1.forEach(displayPoint)
+setInterval(redraw, 5)
 
 //6
 const signDiv = document.getElementById('sign')

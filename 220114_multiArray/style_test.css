@@ -15,6 +15,7 @@ body{
     border: 1px solid red;
     background: black;
     position: relative;
+    overflow: hidden;
 }
 .dot{
     width: 3px; /* 그래프 선의 굵기 설정 */
