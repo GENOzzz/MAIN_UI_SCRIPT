@@ -45,6 +45,7 @@ function displayPoint(point){
     pointEl.style.top = `${(y* yScale) * -1 + yShift}px` // y-scale : 100배 (반전 + 좌표이동)
     graph.appendChild(pointEl)
 }
+
 function displaycoPoint(point){
     const [x, y] = point
     const xScale = 2, yScale = 100, yShift = 100 //y좌표 이동
@@ -55,6 +56,7 @@ function displaycoPoint(point){
     pointEl.style.top = `${(y* yScale) * -1 + yShift}px` // y-scale : 100배 (반전 + 좌표이동)
     graph.appendChild(pointEl)
 }
+
 function displaytanPoint(point){
     const [x, y] = point
     const xScale = 2, yScale = 100, yShift = 100 //y좌표 이동

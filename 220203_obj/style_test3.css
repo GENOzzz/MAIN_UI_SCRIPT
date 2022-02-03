@@ -1,0 +1,27 @@
+.body{
+    margin: 0;
+    top:0;
+    position: absolute;
+}
+#root{
+    width: 600px;
+    height: 600px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 20%;
+    margin-top: 10%;
+    background-color: khaki;
+}
+.characters{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    color: white;
+    background-color: salmon;
+    text-align: center;
+}
+.cnt{
+    font-size: 2rem;
+}
